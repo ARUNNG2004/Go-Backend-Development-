@@ -23,10 +23,18 @@ func LoadConfig() AppConfig {
 		log.Println("Warning: No .env file found, relying on system environment variables")
 	}
 
+	port := getEnv("PORT", "")
+	if port == "" {
+		port = getEnv("APP_PORT", "3000")
+	}
+	if len(port) > 0 && port[0] != ':' {
+		port = ":" + port
+	}
+
 	return AppConfig{
-		Port:     getEnv("APP_PORT", ":3000"), // Defaults to :3000 if not found
+		Port:     port,
 		DBDriver: getEnv("DB_DRIVER", "mysql"),
-		DBSource: getEnv("DB_SOURCE", ""), // We leave this empty so it errors out if missing
+		DBSource: getEnv("DB_SOURCE", ""),
 	}
 }
 
