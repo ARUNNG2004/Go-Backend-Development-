@@ -112,20 +112,22 @@ CREATE TABLE users (
 
 ## 🔌 API Endpoints
 
-| Method | Endpoint      | Description          |
-|--------|--------------|----------------------|
-| POST   | `/users`     | Create a new user    |
-| GET    | `/users`     | List all users       |
-| GET    | `/users/:id` | Get a user by ID     |
-| PUT    | `/users/:id` | Update a user by ID  |
-| DELETE | `/users/:id` | Delete a user by ID  |
+**Base URL:** `https://go-backend-development.onrender.com`
+
+| Method | Endpoint      | Full Render URL | Description          |
+|--------|--------------|-----------------|----------------------|
+| POST   | `/users`     | `https://go-backend-development.onrender.com/users` | Create a new user    |
+| GET    | `/users`     | `https://go-backend-development.onrender.com/users` | List all users       |
+| GET    | `/users/:id` | `https://go-backend-development.onrender.com/users/:id` | Get a user by ID     |
+| PUT    | `/users/:id` | `https://go-backend-development.onrender.com/users/:id` | Update a user by ID  |
+| DELETE | `/users/:id` | `https://go-backend-development.onrender.com/users/:id` | Delete a user by ID  |
 
 ### Example: Create User
 
 **Request**
 
 ```http
-POST /users
+POST https://go-backend-development.onrender.com/users
 Content-Type: application/json
 
 {
@@ -142,6 +144,81 @@ Content-Type: application/json
   "name": "John Doe",
   "dob": "1995-08-15"
 }
+```
+
+### Example: List All Users
+
+**Request**
+
+```http
+GET https://go-backend-development.onrender.com/users
+```
+
+**Response** `200 OK`
+
+```json
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "dob": "1995-08-15",
+    "age": 30
+  }
+]
+```
+
+### Example: Get User by ID
+
+**Request**
+
+```http
+GET https://go-backend-development.onrender.com/users/1
+```
+
+**Response** `200 OK`
+
+```json
+{
+  "id": 1,
+  "name": "John Doe",
+  "dob": "1995-08-15",
+  "age": 30
+}
+```
+
+### Example: Update User by ID
+
+**Request**
+
+```http
+PUT https://go-backend-development.onrender.com/users/1
+Content-Type: application/json
+
+{
+  "name": "John Smith",
+  "dob": "1995-08-15"
+}
+```
+
+**Response** `200 OK`
+
+```json
+{
+  "id": 1,
+  "name": "John Smith",
+  "dob": "1995-08-15"
+}
+```
+
+### Example: Delete User by ID
+
+**Request**
+
+```http
+DELETE https://go-backend-development.onrender.com/users/1
+```
+
+**Response** `204 No Content`
 ```
 
 ---
