@@ -1,0 +1,5 @@
+CREATE TABLE users (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name TEXT NOT NULL,
+    dob DATE NOT NULL
+); 

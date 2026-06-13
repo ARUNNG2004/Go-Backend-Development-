@@ -1,0 +1,90 @@
+# ========================
+# Go
+# ========================
+
+# Compiled binaries and executables
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+/bin/
+/dist/
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of `go tool cover`
+*.out
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Dependency download cache
+/vendor/
+
+# ========================
+# Environment & Secrets
+# ========================
+
+# Environment variable files — NEVER commit secrets
+.env
+.env.*
+!.env.example
+
+# ========================
+# IDE & Editor
+# ========================
+
+# VS Code
+.vscode/
+
+# JetBrains / GoLand
+.idea/
+*.iml
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+\#*\#
+.\#*
+
+# ========================
+# OS Generated Files
+# ========================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+
+# ========================
+# Build & Tooling
+# ========================
+
+# Air (live reload tool)
+tmp/
+air.toml
+
+# sqlc generated output (optional — remove if you commit generated code)
+# db/sqlc/
+
+# ========================
+# Logs
+# ========================
+
+*.log
+logs/
