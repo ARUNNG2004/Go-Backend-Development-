@@ -79,7 +79,7 @@ PORT=:8080
 Run the migration SQL against your MySQL instance:
 
 ```bash
-mysql -u root -p your_database < db/migrations/schema.sql
+sqlc generate
 ```
 
 ### 4. Install Dependencies
